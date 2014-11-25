@@ -1,0 +1,110 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Shopping App</title>
+      <link rel="stylesheet" type="text/css" href="css/main.css">
+      <link rel="icon" type="image/png" href="images/andela_icon.png"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+
+      <header>
+        <img src="images/cart1.png" alt="logo" id="logo_icon" >
+        <h2>Shopping App</h2>
+      </header>
+
+      <!-- Body container -->
+      
+      <div class="container"> 
+
+      <!-- Left Column Container -->
+
+        <div id="left_col">
+
+          <h3>Enter Items you want to purchase</h3><hr/>
+          <p>
+            <label>Item Description</label>
+            <input id="new_item" type="text">
+            <button id="add_item">Add to Cart</button>
+            <label id="displayMessage"></label>
+          </p>
+
+
+        <div id="cart_section">
+          <h3>Wish List - Virtual Cart ;)</h3>
+          <p>Check purchased items</p><hr/>
+          <ul id="cart">
+
+            <li>
+            	<input type="checkbox" class="cheq"><label>Iphone 5S</label><span class="float_right">
+            	<input type="text">
+            	<button class="edit">Edit item</button>
+            	<button class="delete">Remove Item</button></span>
+            </li>
+
+            <li>
+              <input type="checkbox" class="cheq"><label>Microwave</label><span class="float_right">
+              <input type="text">
+              <button class="edit">Edit item</button>
+              <button class="delete">Remove Item</button></span>
+            </li>
+
+            <li>
+              <input type="checkbox" class="cheq"><label>Spy Cam</label><span class="float_right">
+              <input type="text">
+              <button class="edit">Edit item</button>
+              <button class="delete">Remove Item</button></span>
+            </li>
+
+            
+            
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Right column Container -->
+
+      <div id="right_col">
+        
+        <h3>Purchased Items</h3>
+        <p>Uncheck box to Remove ItemShopping Cart</p><hr/>
+          <ul id="bought_items">
+            <li>
+              <input type="checkbox" checked><label>Grand Piano</label><span class="float_right">
+              <input type="text">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button></span>
+            </li>
+
+            <li>
+            	<input type="checkbox" checked><label>Heckler and Koch</label><span class="float_right">
+            	<input type="text">
+            	<button class="edit">Edit</button>
+            	<button class="delete">Delete</button></span>
+            </li>
+
+            <li>
+              <input type="checkbox" checked><label>Mini Uzi</label><span class="float_right">
+              <input type="text">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button></span>
+            </li>
+
+            <li>
+              <input type="checkbox" checked><label>Screen Projector</label><span class="float_right">
+              <input type="text">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button></span>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+
+      <script type="text/javascript" src="js/app.js"></script>
+      <footer>&#169;2014Andela-mfalade2014</footer>
+    </body>
+  </html>
