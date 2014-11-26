@@ -1,6 +1,6 @@
 
-var itemInput = "",
-		feedback, 
+var feedback,
+		listItem, 
 		addButton, 
 		cartedItemsHolder, 
 		boughtItemsHolder;
@@ -10,23 +10,28 @@ var itemInput = "",
 var shoppingList = {
 
 		formElements: function() {
-			itemInput = document.getElementById('new_item'),
-			feedback = document.getElementById('displayMessage'), 
-			addButton = document.getElementById('add_item'), 
-			cartedItemsHolder = document.getElementById('cart'), 
-			boughtItemsHolder = document.getElementById('bought_items')
+			var itemInput = document.getElementById('new_item'),
+					itemString = itemInput.value;
+
+
+					feedback = document.getElementById('displayMessage'), 
+					addButton = document.getElementById('add_item'), 
+					cartedItemsHolder = document.getElementById('cart'), 
+					boughtItemsHolder = document.getElementById('bought_items')
 		},
 
 		onReady: function() {
-			shoppingList.formElements();
-			addButton.onclick = shoppingList.addItem;
+					shoppingList.formElements();
+					addButton.onclick = shoppingList.addItem;
 
 			var checkBox =  cartedItemsHolder.querySelector("input[type=checkbox]"),
+					checkedBox = boughtItemsHolder.querySelector("input[type=checkbox]"),
 					editButton = cartedItemsHolder.querySelector("button.edit"),
 					deleteButton = cartedItemsHolder.querySelector("button.delete");
 
 
 					checkBox.onchange = shoppingList.moveItemsToBought;
+					checkedBox.onchange = shoppingList.moveItemToCart;
 					editButton.onclick = shoppingList.editItem;
 					deleteButton.onclick = shoppingList.deleteItem;
 		},
@@ -41,7 +46,6 @@ var shoppingList = {
 
 
 					checkBox.type = "checkbox";
-					label.value = "itemString";
 					editButton.innerHTML = "Edit Item";
 					editButton.className = "edit";
 					deleteButton.innerHTML = "Remove Item";
@@ -58,10 +62,9 @@ var shoppingList = {
 
 		addItem: function() {
 
-					// itemInput.value = "";
 					feedback.innerHTML = "Item Successfully Added !";
 
-					var newListItem = shoppingList.createNewShoppingItem("Test Item");
+					var newListItem = shoppingList.createNewShoppingItem("Hello World");
 							cartedItemsHolder.appendChild(newListItem);
 
 		},
@@ -69,13 +72,13 @@ var shoppingList = {
 		moveItemsToBought: function() {
 					var listItem = this.parentNode;
 					boughtItemsHolder.appendChild(listItem);
-					onReady(listItem, moveItemToCart);
+					this.onReady(listItem, moveItemToCart);
 		},
 
 		moveItemToCart: function() {
 					var listItem = this.parentNode;
 					cartedItemsHolder.appendChild(listItem);
-					onReady(listItem, moveItemsToBought);
+					this.onReady(listItem, moveItemsToBought);
 		},
 
 		editItem: function() {
