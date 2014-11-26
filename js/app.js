@@ -27,13 +27,15 @@ var shoppingList = {
 			var checkBox =  cartedItemsHolder.querySelector("input[type=checkbox]"),
 					checkedBox = boughtItemsHolder.querySelector("input[type=checkbox]"),
 					editButton = cartedItemsHolder.querySelector("button.edit"),
-					deleteButton = cartedItemsHolder.querySelector("button.delete");
+					deleteButton = cartedItemsHolder.querySelector("button.delete"),
+					removeButton = boughtItemsHolder.querySelector("button.delete");
 
 
 					checkBox.onchange = shoppingList.moveItemsToBought;
 					checkedBox.onchange = shoppingList.moveItemToCart;
 					editButton.onclick = shoppingList.editItem;
 					deleteButton.onclick = shoppingList.deleteItem;
+					removeButton.onclick = shoppingList.deleteItem;
 		},
 
 		createNewShoppingItem: function(itemString) {
@@ -56,6 +58,7 @@ var shoppingList = {
 					listItem.appendChild(label);
 					listItem.appendChild(editButton);
 					listItem.appendChild(deleteButton);
+					listItem.appendChild(removeButton);
 
 					return listItem;
 		},
