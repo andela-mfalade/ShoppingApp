@@ -80,6 +80,11 @@ button {
 	border: none;
 }
 
+#cart li button {
+	margin-right: 40px;
+	float: right;
+}
+
 input {
 	height:25px;
 }

@@ -1,9 +1,10 @@
 
-var itemInput,
+var itemInput = "",
 		feedback, 
 		addButton, 
 		cartedItemsHolder, 
-		boughtItemsHolder;
+		boughtItemsHolder,
+		itemString = itemInput.value;
 		
 
 
@@ -36,23 +37,20 @@ var shoppingList = {
 			var listItem = document.createElement("li"),
 					checkBox = document.createElement("input"),
 					label = document.createElement("label"),
-					editInput = document.createElement("input"),
 					editButton = document.createElement("button"),
 					deleteButton = document.createElement("button");
 
 
 					checkBox.type = "checkbox";
-					editInput.type = "edit";
 					editButton.innerHTML = "Edit Item";
 					editButton.className = "edit";
 					deleteButton.innerHTML = "Remove Item";
 					deleteButton.className = "delete";
-					label.innerText = itemString;
+					label.innerText = this.itemString;
 
 
 					listItem.appendChild(checkBox);
 					listItem.appendChild(label);
-					listItem.appendChild(editInput);
 					listItem.appendChild(editButton);
 					listItem.appendChild(deleteButton);
 
@@ -60,7 +58,7 @@ var shoppingList = {
 		},
 
 		addItem: function() {
-					console.log("Add item..");
+
 					itemInput.value = "";
 					feedback.innerHTML = "Item Successfully Added !";
 
@@ -70,28 +68,24 @@ var shoppingList = {
 		},
 
 		moveItemsToBought: function() {
-					console.log('buy item..');
 					var listItem = this.parentNode;
 					boughtItemsHolder.appendChild(listItem);
 					onReady(listItem, moveItemToCart);
 		},
 
 		moveItemToCart: function() {
-					console.log('cart Item..');
 					var listItem = this.parentNode;
 					cartedItemsHolder.appendChild(listItem);
 					onReady(listItem, moveItemsToBought);
 		},
 
 		editItem: function() {
-					console.log("Item can now be edited..");
 					var listItem = this.parentNode;
 					var li = listItem.parentNode;
 					li.removeChild(listItem);
 		},
 
 		deleteItem: function() {
-					console.log("Item can now be deleted..");
 					var listItem = this.parentNode;
 					var li = listItem.parentNode;
 					li.removeChild(listItem);
