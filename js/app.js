@@ -41,6 +41,15 @@ var shoppingList = {
 					deleteButton = document.createElement("button");
 
 
+					checkBox.type = "checkbox";
+					editInput.type = "edit";
+					editButton.innerHTML = "Edit Item";
+					editButton.className = "edit";
+					deleteButton.innerHTML = "Remove Item";
+					deleteButton.className = "delete";
+					label.innerText = itemString;
+
+
 					listItem.appendChild(checkBox);
 					listItem.appendChild(label);
 					listItem.appendChild(editInput);
@@ -53,7 +62,7 @@ var shoppingList = {
 		addItem: function() {
 					console.log("Add item..");
 					itemInput.value = "";
-					feedback.innerHTML = "Item Added Successfully!";
+					feedback.innerHTML = "Item Successfully Added !";
 
 					var newListItem = shoppingList.createNewShoppingItem();
 							cartedItemsHolder.appendChild(newListItem);
@@ -71,7 +80,7 @@ var shoppingList = {
 					console.log('cart Item..');
 					var listItem = this.parentNode;
 					cartedItemsHolder.appendChild(listItem);
-					onReady(listItem, moveItemToCart);
+					onReady(listItem, moveItemsToBought);
 		},
 
 		editItem: function() {
@@ -88,16 +97,18 @@ var shoppingList = {
 					li.removeChild(listItem);
 		},
 
-		append: function() {
-			for (var i = 0; i < onReady.children.length; i++) {
-					onReady(cartedItemsHolder.children[i], itemsBought );
-			}
+		// bindShoppingEvents: function() {
+		// 	append: function() {
+		// 	for (var i = 0; i < onReady.children.length; i++) {
+		// 			onReady(cartedItemsHolder.children[i], itemsBought );
+		// 	};
 
-			for (var i = 0; i < onReady.children.length; i++) {
-					onReady(boughtItemsHolder.children[i], itemsCarted );
-			}
+		// 	for (var i = 0; i < onReady.children.length; i++) {
+		// 			onReady(boughtItemsHolder.children[i], itemsCarted );
+		// 	}
 
-		}	
+		// };
+		// }
 		
 
 };
