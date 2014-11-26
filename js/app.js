@@ -3,8 +3,7 @@ var itemInput = "",
 		feedback, 
 		addButton, 
 		cartedItemsHolder, 
-		boughtItemsHolder,
-		itemString = itemInput.value;
+		boughtItemsHolder;
 		
 
 
@@ -42,11 +41,11 @@ var shoppingList = {
 
 
 					checkBox.type = "checkbox";
+					label.value = "itemString";
 					editButton.innerHTML = "Edit Item";
 					editButton.className = "edit";
 					deleteButton.innerHTML = "Remove Item";
 					deleteButton.className = "delete";
-					label.innerText = this.itemString;
 
 
 					listItem.appendChild(checkBox);
@@ -59,10 +58,10 @@ var shoppingList = {
 
 		addItem: function() {
 
-					itemInput.value = "";
+					// itemInput.value = "";
 					feedback.innerHTML = "Item Successfully Added !";
 
-					var newListItem = shoppingList.createNewShoppingItem();
+					var newListItem = shoppingList.createNewShoppingItem("Test Item");
 							cartedItemsHolder.appendChild(newListItem);
 
 		},
