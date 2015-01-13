@@ -64,7 +64,7 @@ var addItem = function() {
 var editItem = function() {
 		console.log('This function EDIT item has been called.. It works.. Items can now be edited');
 		var listItem = this.parentNode;
-				editButton = listItem.querySelector("button.edit")
+				editButton = listItem.querySelector("button.edit"),
 				editInput = listItem.querySelector("input[type=text]"),
 				label = listItem.querySelector("label"),
 
