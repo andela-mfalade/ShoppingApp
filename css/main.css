@@ -37,22 +37,33 @@ p {
 	width: 85%;
 	min-height: 100%;
 	margin: 0 auto;
-	/*border: 1px solid #23C8F9;*/
 	padding: 2em;
 }
 
 #left_col {
 	float: left;
 	margin-left: 1em;
+	overflow: hidden;
+	height: 500px;
 }
 
 #right_col {
 	float: right;
 	margin-right: 1em;
+	height:500px;
+	overflow: hidden;
+}
+
+h2 {
+	color: #fbfbfb;
 }
 
 h3, hr {
 	text-align: left;
+}
+
+button.edit {
+	width: 50px;
 }
 
 #displayMessage {
@@ -80,8 +91,22 @@ button {
 	border: none;
 }
 
-input {
-	height:25px;
+ul li {
+	margin: 15px 0;
+}
+
+input[type="text"] {
+	height: 25px;
+	border-radius: 5px;
+	outline: none;
+	padding-left: 7px;
+	font-size: 16px;
+	color: rgb(44, 173, 124);
+	display: none;
+}
+
+li.editMode input[type="text"]{
+	color: rgb(144, 195, 176);
 }
 
 #bought_items label {
@@ -89,11 +114,9 @@ input {
   color: #888;
 }
 
-.float_right {
-	float: right;
-}
 
 footer {
+	clear: both;
 	text-align: center;
 	right: 20px;
 	font-size: 12px;
@@ -101,3 +124,17 @@ footer {
 	bottom: 0;
 	position: absolute;
 }
+
+li {
+	width: 400px;
+}
+
+li button{
+	float: right;
+	margin-left: 5px;	
+}
+
+li.editMode input[type="text"], p input[type="text"]{
+	display: inline;
+}
+
